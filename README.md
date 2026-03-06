@@ -1,6 +1,6 @@
-# Amprobe GT-800 ESC → CSV Converter
+# GT-800 ESC → CSV Converter
 
-Konvertiert Messdaten des **Amprobe GT-800 Geräteprüfers** vom proprietären ESC-Format in lesbares CSV. Erkennt Duplikate bei mehrfachem Einlesen automatisch.
+Konvertiert Messdaten des **GT-800 Geräteprüfers** vom proprietären ESC-Format in lesbares CSV. Erkennt Duplikate bei mehrfachem Einlesen automatisch.
 
 > **Hinweis:** Das ESC-Protokoll wurde durch KI-gestützte Analyse (Claude / OpenClaw) der Rohdaten reverse-engineered, da keine offizielle Dokumentation verfügbar ist. Die Feldzuordnungen basieren auf empirischen Tests mit einem GT-800 (Seriennr. 19086, Firmware 8.38/8.08/2.02).
 
