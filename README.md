@@ -2,7 +2,7 @@
 
 Konvertiert Messdaten des **GT-800 Geräteprüfers** vom proprietären ESC-Format in lesbares CSV. Erkennt Duplikate bei mehrfachem Einlesen automatisch.
 
-> **Hinweis:** Das ESC-Protokoll wurde durch KI-gestützte Analyse (Claude / OpenClaw) der Rohdaten reverse-engineered, da keine offizielle Dokumentation verfügbar ist. Die Feldzuordnungen basieren auf empirischen Tests mit einem GT-800 (Seriennr. 19086, Firmware 8.38/8.08/2.02).
+> **Hinweis:** Das ESC-Protokoll wurde durch KI-gestützte Analyse (Claude / OpenClaw) der Rohdaten reverse-engineered, da keine offizielle Dokumentation verfügbar ist. Die Feldzuordnungen basieren auf empirischen Tests mit einem GT-800 (Firmware 8.38/8.08/2.02).
 
 ## Features
 
@@ -78,12 +78,12 @@ Wenn dieselbe Messung in mehreren ESC-Dateien vorkommt (z.B. durch wiederholtes 
 ESC-Dateien sind zeilenbasierte Textdateien (Latin-1 Encoding). Jede Zeile besteht aus einer **Feldnummer** gefolgt von einem **Wert**, getrennt durch Leerzeichen.
 
 ```
-:19086              ← Geräte-Seriennummer (Datei-Header)
+:XXXXX              ← Geräte-Seriennummer (Datei-Header)
 0 GT-800            ← Modellbezeichnung
 19 8.38             ← Firmware Version 1
 20 8.08             ← Firmware Version 2
 21 2.02             ← Firmware Version 3
-22 27170017         ← Prüfgeräte-Seriennummer
+22 XXXXXXXX         ← Prüfgeräte-Seriennummer
 ...Messblöcke...
 99                  ← Dateiende
 ```
@@ -92,12 +92,12 @@ ESC-Dateien sind zeilenbasierte Textdateien (Latin-1 Encoding). Jede Zeile beste
 
 | Feld | Bedeutung | Beispiel |
 |------|-----------|---------|
-| `:` | Geräte-ID (erste Zeile, mit Doppelpunkt) | `:19086` |
+| `:` | Geräte-ID (erste Zeile, mit Doppelpunkt) | `:XXXXX` |
 | 0 | Modellbezeichnung | `GT-800` |
 | 19 | Firmware Version 1 | `8.38` |
 | 20 | Firmware Version 2 | `8.08` |
 | 21 | Firmware Version 3 | `2.02` |
-| 22 | Seriennummer Prüfgerät | `27170017` |
+| 22 | Seriennummer Prüfgerät | `XXXXXXXX` |
 | 99 | Dateiende-Marker | (kein Wert) |
 
 ### Stammdaten-Felder (pro Messblock)
