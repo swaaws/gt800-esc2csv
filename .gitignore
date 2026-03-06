@@ -1,0 +1,6 @@
+*.csv
+*.ESC
+*.esc
+*.dng
+__pycache__/
+_shellfish_*
